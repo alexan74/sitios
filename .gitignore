@@ -1,0 +1,11 @@
+/backup/*
+/encuestas/*
+/softys_web/*
+/talles/*
+/empleados/logs/*
+/empleados/tmp/*
+/uecara/logs/*
+/uecara/tmp/*
+.settings/*
+.buildpath
+.project
