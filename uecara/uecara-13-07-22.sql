@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `afiliados` (
   CONSTRAINT `FK_afiliados_tipos_empresa` FOREIGN KEY (`tipo_empresa_id`) REFERENCES `tipos_empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- Volcando datos para la tabla uecara.afiliados: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla uecara.afiliados: ~1 rows (aproximadamente)
 INSERT INTO `afiliados` (`id`, `nro_afiliado`, `nomyape`, `fecha_nac`, `cuil`, `telefono`, `direccion`, `email`, `empresa_id`, `tipo_empresa_id`, `tipo_contratacion`, `fecha_ingreso_afiliado`, `fecha_baja_sindicato`, `telefono_empresa`, `email_empresa`, `observaciones`, `fecha_ingreso_empresa`, `categoria_id`, `retiro_carnet`, `baja`, `tramite_id`) VALUES
 	(1, 435345, 'tetertreb r te', '1985-05-23 00:00:00', '43534534534', '3453534', 'fgdgsdfgs 4354', 'info@correo.com', 5, 1, 'temporario', '2022-06-09 00:00:00', '2022-06-14 00:00:00', '43534535', 'a@a.com', 'gfdhg hdgf', '2022-06-14 00:00:00', 1, 1, 1, 9);
 
@@ -79,6 +79,33 @@ INSERT INTO `archivos` (`id`, `nombre`, `ruta`, `tramite_id`) VALUES
 	(23, 'curso virtual.txt', 'D:\\www\\federico\\uecara\\webroot\\\\uploads\\curso virtual.txt', 6),
 	(25, 'celulares.txt', 'D:\\www\\federico\\uecara\\webroot\\\\uploads\\celulares.txt', 8),
 	(26, 'prueba(3).txt', 'D:\\www\\federico\\uecara\\webroot\\\\uploads\\prueba(3).txt', 9);
+
+-- Volcando estructura para tabla uecara.boletas
+CREATE TABLE IF NOT EXISTS `boletas` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `empresa_id` int(10) unsigned DEFAULT NULL,
+  `mes` int(2) unsigned DEFAULT NULL,
+  `anio` int(2) unsigned DEFAULT NULL,
+  `cant_personal` int(3) unsigned DEFAULT NULL,
+  `total_remuneracion` decimal(10,2) unsigned DEFAULT NULL,
+  `aporte_cuota_sindical` decimal(10,2) unsigned DEFAULT NULL,
+  `aporte_fondo_social` decimal(10,2) unsigned DEFAULT NULL,
+  `aporte_especial` decimal(10,2) unsigned DEFAULT NULL,
+  `aporte_extra` decimal(10,2) unsigned DEFAULT NULL,
+  `otros` decimal(10,2) unsigned DEFAULT NULL,
+  `tipo_pago` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `transferencia_id` int(10) unsigned DEFAULT NULL,
+  `num_cheque` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `banco` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `cheque_id` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `transferencia_id` (`transferencia_id`),
+  KEY `cheque_id` (`cheque_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- Volcando datos para la tabla uecara.boletas: 0 rows
+/*!40000 ALTER TABLE `boletas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `boletas` ENABLE KEYS */;
 
 -- Volcando estructura para tabla uecara.categorias_empresa
 CREATE TABLE IF NOT EXISTS `categorias_empresa` (
@@ -220,7 +247,7 @@ CREATE TABLE IF NOT EXISTS `tipos_empresa` (
   CONSTRAINT `FK_tipos_empresa_categorias_empresa_2` FOREIGN KEY (`subcategoria_id`) REFERENCES `categorias_empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- Volcando datos para la tabla uecara.tipos_empresa: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla uecara.tipos_empresa: ~1 rows (aproximadamente)
 INSERT INTO `tipos_empresa` (`id`, `tipo`, `categoria_id`, `subcategoria_id`, `activo`) VALUES
 	(1, 'Tipo1', 1, 1, 1);
 
@@ -235,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `token` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla uecara.token: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla uecara.token: ~1 rows (aproximadamente)
 INSERT INTO `token` (`id`, `token`, `user_id`, `created`, `modified`, `validez`) VALUES
 	(1, '5yW3lgcYcfmZJPjVF1MGonSw', 1, NULL, NULL, 1440);
 

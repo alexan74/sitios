@@ -90,7 +90,7 @@ $usuario = $this->request->getSession()->read('Auth.User');
                 <th width="200px"scope="col">Descripcion</th>
                 <th width="80px"scope="col">Valor</th>
                 <th width="80px"scope="col">Carga</th>
-                <th width="80px"scope="col">pagado <input type="checkbox" onclick="apagar()" id="apagar" value="1" /></th>
+                <th width="80px"scope="col">pagado <!-- <input type="checkbox" onclick="apagar()" id="apagar" value="1" />--></th>
                 <th width="30px"scope="col" ><?= __('Ver') ?></th>
                 <?php if ($usuario['tipo_usuario']!=1) { ?>
                 <th width="30px"scope="col" ><?= __('Acción') ?></th>
@@ -110,7 +110,7 @@ $usuario = $this->request->getSession()->read('Auth.User');
                 <td><?= h(($viatico->carga)?"Automatico":"Manual") ?></td>
                 <td>
                 <?php if ($usuario['tipo_usuario']==2) { ?>
-                <?= h(($viatico->pagado)?"Si":"No") ?></td>
+				<?= h(($viatico->pagado)?"Si":"No") ?></td>
                 <?php } else { ?>
                 	<input id="chk_pagado" type="checkbox" value="1" name="chk_pagado" class="chk_pagado" data-id="<?= $viatico->id ?>" <?= ($viatico->pagado)?" checked disabled":"" ?> />
                 <?php } ?>
