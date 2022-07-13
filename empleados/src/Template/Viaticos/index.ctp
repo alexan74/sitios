@@ -194,7 +194,7 @@ $usuario = $this->request->getSession()->read('Auth.User');
                     data: {valor: valor, id: id},
                     success: function (data) {
                     	var total=0;
-                    	$('input[name=chk_pagado]:checked').each(function() {
+                    	$('input[name=chk_pagado]:not(:checked)').each(function() {
             				total += ($(this).closest('tr').find('span#valor').data('valor'));
             				
             			});
