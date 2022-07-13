@@ -1,0 +1,17 @@
+centro medico:
+1- tjg alex123345
+2- doctor 123345
+3- secretaria 123345
+
+softys:
+1- alex 123345
+2- majo 123345
+
+sistemaic:
+admin
+asdf123345
+
+ameghino
+1- alex alex123345
+2- admin 123345
+3- usuario 123345

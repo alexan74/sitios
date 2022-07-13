@@ -1,0 +1,3 @@
+Te recomendamos nombrar el archivo utilizado como plantilla con una
+referencia al número de módulo y tu apellido (ejemplo: “ONTI - Curso TyHAW -
+m1 - Juan Paz.xlsx”).

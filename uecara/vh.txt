@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+    Define ROOT "d:/www/federico/uecara"
+    ServerName uecara.local
+   
+    DocumentRoot   ${ROOT}/webroot/
+    DirectoryIndex index.php
+
+    ErrorLog  ${ROOT}/logs/error.log
+    CustomLog ${ROOT}/logs/debug.log combined
+	php_value error_log ${ROOT}/logs/error_php.log
+   
+    <Directory ${ROOT}/webroot>
+        AllowOverride All
+		Options None FollowSymLinks
+        Require all granted
+        php_value include_path ".;${ROOT}/config"
+        php_value default_charset UTF-8
+    </Directory>
+</VirtualHost>
